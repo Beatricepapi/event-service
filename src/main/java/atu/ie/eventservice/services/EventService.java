@@ -52,7 +52,6 @@ public class EventService {
         if (event.getAvailableTickets() < quantity) {
             throw new RuntimeException("Not enough tickets available");
         }
-
         event.setAvailableTickets(event.getAvailableTickets() - quantity);
         return eventRepository.save(event);
     }
